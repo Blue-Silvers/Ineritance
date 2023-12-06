@@ -200,6 +200,7 @@ MonoBehaviour:
   ThirstIcone: {fileID: 6021380441891180046}
   TirednessIcone: {fileID: 7849772293930668264}
   Sleep: 0
+  Spawnpoint: 3
   Chill: 0
   DontMoove: 0
   speed: 3

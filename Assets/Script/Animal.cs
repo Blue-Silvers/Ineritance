@@ -14,6 +14,7 @@ public class Animal : MonoBehaviour
 
     [SerializeField] protected bool Sleep;
 
+    public int Spawnpoint;
 
     protected void Start()
     {

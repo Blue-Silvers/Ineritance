@@ -68,7 +68,20 @@ public class ZooManager : MonoBehaviour
     {
         if (Money >= animal.GetComponent<Animal>().price)
         {
-            animal = Instantiate(animal, landSpawn.position, landSpawn.rotation);
+            int AnimalSpawn = animal.GetComponent<Animal>().Spawnpoint;
+            if (AnimalSpawn == 1) 
+            {
+                animal = Instantiate(animal, landSpawn.position, landSpawn.rotation);
+            }
+            else if (AnimalSpawn == 3)
+            {
+                animal = Instantiate(animal, waterSpawn.position, waterSpawn.rotation);
+            }
+            else
+            {
+                animal = Instantiate(animal, skySpawn.position, skySpawn.rotation);
+            }
+
             NbAnnimal++;
             Money = Money - animal.GetComponent<Animal>().price;
             RenamePage(animal.GetComponent<Animal>());
