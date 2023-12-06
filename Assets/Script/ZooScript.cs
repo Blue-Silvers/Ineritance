@@ -28,11 +28,6 @@ public class ZooScript : MonoBehaviour
 
     protected void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(mammals);
-            NbAnnimals++;
-        }*/
 
 
         //need feed
@@ -84,11 +79,6 @@ public class ZooScript : MonoBehaviour
         TirednessIcone.SetActive(false);
     }
 
-
-    /*protected void NewMammals()
-    {
-        NbAnnimals++;
-    }*/
 
     public void AnnimalDie()
     {
