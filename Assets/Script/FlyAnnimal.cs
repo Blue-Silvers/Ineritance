@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyAnnimal : ZooScript
+public class FlyAnnimal : Animal
 {
 
     [SerializeField] bool DontMoove;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkAnnimal : ZooScript
+public class WalkAnnimal : Animal
 {
     [SerializeField] int Chill;
     [SerializeField] bool DontMoove;

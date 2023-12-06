@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SwimAnnimal : ZooScript
+public class SwimAnnimal : Animal
 {
     [SerializeField] int Chill;
     [SerializeField] bool DontMoove;

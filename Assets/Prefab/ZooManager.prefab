@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 8512506594873755837}
   - component: {fileID: 2351273146673490834}
   - component: {fileID: 2090870847578967993}
+  - component: {fileID: 1411791556853783116}
   m_Layer: 5
   m_Name: ZooManager
   m_TagString: Untagged
@@ -482,6 +483,21 @@ MonoBehaviour:
   NbAnnimalTxt: {fileID: 6747571006345440548}
   WindowOpen: 0
   DieingTxt: {fileID: 3630622407762913788}
+--- !u!114 &1411791556853783116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829586597891666016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56e75a118ee4d24b9d8f9c4259cecfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopM: {fileID: 5955712030071340679}
+  NameUi: {fileID: 6216990649947120363}
+  nameField: {fileID: 2269440477386834514}
 --- !u!1 &1003571222266576502
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,11 +623,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyKingfisher
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1003571222266576502}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1771,11 +1787,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyChimpanzee
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4692082343654376131, guid: 4d763f68329aa1540a269801c52a8c7a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2040,11 +2056,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyPiranha
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3177553104101272690}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2578,11 +2594,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyPanda
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3475351689164439168}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3033,11 +3049,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyVulture
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3780527902495143945}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3431,7 +3447,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954465520726064919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1411791556853783116}
+        m_TargetAssemblyTypeName: ChooseName, Assembly-CSharp
+        m_MethodName: Validate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5160634106184566412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,7 +4056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2973795486292418036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4455,11 +4483,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090870847578967993}
         m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
-        m_MethodName: BuyCarp
-        m_Mode: 1
+        m_MethodName: Buy
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 6299433703949982871}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

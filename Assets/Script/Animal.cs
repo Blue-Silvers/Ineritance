@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
 
-public class ZooScript : MonoBehaviour
+public class Animal : MonoBehaviour
 {
     [SerializeField] protected string Name;
     [SerializeField] protected int Age, Longetivity;
-
+    public int price;
     [SerializeField] private TypeOfFoodEat typeOfFood;
 
     [SerializeField] protected float Hunger, Thirst, Tiredness;
@@ -79,6 +79,11 @@ public class ZooScript : MonoBehaviour
             }
         }
 
+    }
+
+    public void SetName(string name)
+    {
+        Name = name;
     }
 
     protected void SleepTime()

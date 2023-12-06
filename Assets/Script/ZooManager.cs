@@ -9,10 +9,10 @@ public class ZooManager : MonoBehaviour
     public static ZooManager Instance;
 
     [SerializeField] GameObject ShopM, NameUi, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
-    [SerializeField] int money = 100;
+    public int money = 100;
     [SerializeField] float Money = 100;
     [SerializeField] Transform landSpawn, waterSpawn, skySpawn;
-    [SerializeField] int NbAnnimal = 0;
+    public int NbAnnimal = 0;
 
     public TextMeshProUGUI MoneyTxt, NbAnnimalTxt;
     public bool WindowOpen = false;
@@ -45,7 +45,6 @@ public class ZooManager : MonoBehaviour
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
     }
 
-
     public void OpenShop()
     {
         if (WindowOpen == false)
@@ -65,71 +64,21 @@ public class ZooManager : MonoBehaviour
         WindowOpen = false;
     }
 
-    public void BuyChimpanzee()
+    public void Buy(GameObject animal)
     {
-        if(Money>= 100)
+        if (Money >= animal.GetComponent<Animal>().price)
         {
-            Instantiate(Chimpanzee, landSpawn.position, landSpawn.rotation);
+            animal = Instantiate(animal, landSpawn.position, landSpawn.rotation);
             NbAnnimal++;
-            Money = Money - 100;
-            RenamePage();
+            Money = Money - animal.GetComponent<Animal>().price;
+            RenamePage(animal.GetComponent<Animal>());
         }
     }
 
-    public void BuyPanda()
-    {
-        if (Money >= 750)
-        {
-            Instantiate(Panda, landSpawn.position, landSpawn.rotation);
-            NbAnnimal++;
-            Money = Money - 750;
-            RenamePage();
-        }
-    }
-    public void BuyCarp()
-    {
-        if (Money >= 200)
-        {
-            Instantiate(Carp, waterSpawn.position, waterSpawn.rotation);
-            NbAnnimal++;
-            Money = Money - 200;
-            RenamePage();
-        }
-    }
-    public void BuyPiranha()
-    {
-        if (Money >= 350)
-        {
-            Instantiate(Piranha, waterSpawn.position, waterSpawn.rotation);
-            NbAnnimal++;
-            Money = Money - 350;
-            RenamePage();
-        }
-    }
-    public void BuyKingfisher()
-    {
-        if (Money >= 500)
-        {
-            Instantiate(Kingfisher, skySpawn.position, skySpawn.rotation);
-            NbAnnimal++;
-            Money = Money - 500;
-            RenamePage();
-        }
-    }
-    public void BuyVulture()
-    {
-        if (Money >= 1000)
-        {
-            Instantiate(Vulture, skySpawn.position, skySpawn.rotation);
-            NbAnnimal++;
-            Money = Money - 1000;
-            RenamePage();
-        }
-    }
-
-    public void RenamePage()
+    public void RenamePage(Animal animal)
     {
         NameUi.SetActive(true);
+        ChooseName.instance.SetupAnimal(animal);
         //WindowsOpen = false;
         ShopM.SetActive(false);
     }

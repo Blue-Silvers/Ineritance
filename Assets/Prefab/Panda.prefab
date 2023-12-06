@@ -355,6 +355,7 @@ MonoBehaviour:
   Name: 
   Age: 0
   Longetivity: 30
+  price: 750
   typeOfFood: 2
   Hunger: 200
   Thirst: 100
@@ -367,7 +368,6 @@ MonoBehaviour:
   ThirstIcone: {fileID: 7312910577250019198}
   TirednessIcone: {fileID: 8372066540826612968}
   Sleep: 0
-  DieingTxt: {fileID: 2986039270125084434, guid: 578dc8188afb49544bb4d013507c997b, type: 3}
   Chill: 0
   DontMoove: 0
   speed: 3
