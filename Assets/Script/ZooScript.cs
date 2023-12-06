@@ -43,7 +43,7 @@ public class ZooScript : MonoBehaviour
         if (ActualHunger < 0)
         {
             Destroy(gameObject);
-            AnnimalDie()
+            AnnimalDie();
         }
         else if (ActualHunger < 50) 
         { 
@@ -56,7 +56,7 @@ public class ZooScript : MonoBehaviour
         if (ActualThirst < 0)
         {
             Destroy(gameObject);
-            AnnimalDie()
+            AnnimalDie() ;
         }
         else if (ActualThirst < 50)
         {
@@ -91,7 +91,7 @@ public class ZooScript : MonoBehaviour
         NbAnnimals++;
     }*/
 
-    protected void AnnimalDie()
+    public void AnnimalDie()
     {
         ZooManager.Instance.Die();
     }
