@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ZooScript : MonoBehaviour
 {
@@ -42,8 +39,9 @@ public class ZooScript : MonoBehaviour
         ActualHunger -= Time.deltaTime;
         if (ActualHunger < 0)
         {
-            Destroy(gameObject);
+
             AnnimalDie();
+            Destroy(gameObject);
         }
         else if (ActualHunger < 50) 
         { 
@@ -55,8 +53,9 @@ public class ZooScript : MonoBehaviour
         ActualThirst -= Time.deltaTime;
         if (ActualThirst < 0)
         {
+            AnnimalDie();
             Destroy(gameObject);
-            AnnimalDie() ;
+            
         }
         else if (ActualThirst < 50)
         {
