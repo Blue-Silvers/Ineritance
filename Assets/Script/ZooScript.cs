@@ -7,12 +7,12 @@ public class ZooScript : MonoBehaviour
 
 
     [SerializeField] protected string Name;
-    [SerializeField] protected int Age;
+    [SerializeField] protected int Age, Longetivity;
 
     [SerializeField] private TypeOfFoodEat typeOfFood;
 
     [SerializeField] protected float Hunger, Thirst, Tiredness;
-    [SerializeField] protected float ActualHunger = 100, ActualThirst = 100, ActualTiredness = 100;
+    [SerializeField] protected float ActualHunger = 100, ActualThirst = 100, ActualTiredness = 100, AgeTime = 100;
     [SerializeField] GameObject HungerIcone, ThirstIcone, TirednessIcone;
 
     [SerializeField] protected bool Sleep;
@@ -28,7 +28,17 @@ public class ZooScript : MonoBehaviour
 
     protected void Update()
     {
-
+        AgeTime -= Time.deltaTime;
+        if (AgeTime < 0)
+        {
+            Age++;
+            AgeTime = 100;
+        }
+        if (Age >= Longetivity)   
+        {
+            AnnimalDie();
+            Destroy(gameObject);
+        }
 
         //need feed
         ActualHunger -= Time.deltaTime;

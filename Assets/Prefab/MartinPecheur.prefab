@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Age: 0
+  Longetivity: 15
   typeOfFood: 1
   Hunger: 80
   Thirst: 150
@@ -361,6 +362,7 @@ MonoBehaviour:
   ActualHunger: 100
   ActualThirst: 100
   ActualTiredness: 100
+  AgeTime: 100
   HungerIcone: {fileID: 5399315840925004201}
   ThirstIcone: {fileID: 5297616089969016832}
   TirednessIcone: {fileID: 2898196898079379343}
