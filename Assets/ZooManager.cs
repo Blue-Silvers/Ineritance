@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ZooManager : MonoBehaviour
 {
+    public static ZooManager Instance;
+
     [SerializeField] GameObject ShopM, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
     [SerializeField] int money = 100;
     [SerializeField] float Money = 100;
@@ -14,9 +16,9 @@ public class ZooManager : MonoBehaviour
     public TextMeshProUGUI MoneyTxt, NbAnnimalTxt;
     public bool WindowOpen = false;
 
-    private void Start()
+    private void Awake()
     {
-
+        Instance = this;
     }
 
     private void Update()
@@ -106,6 +108,11 @@ public class ZooManager : MonoBehaviour
             NbAnnimal++;
             Money = Money - 1000;
         }
+    }
+
+    public void Die()
+    {
+        NbAnnimal--;
     }
 
 }
