@@ -26,7 +26,7 @@ public class ZooManager : MonoBehaviour
             CloseShop();
         }
 
-        Money += Time.deltaTime + NbAnnimal;
+        Money += Time.deltaTime + ( NbAnnimal / 50f);
         money = (int)Money;
         MoneyTxt.text = money.ToString();
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
@@ -35,7 +35,7 @@ public class ZooManager : MonoBehaviour
 
     public void OpenShop()
     {
-        if (WindowOpen == true)
+        if (WindowOpen == false)
         {
             ShopM.SetActive(true);
             WindowOpen = true;
