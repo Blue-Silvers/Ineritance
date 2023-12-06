@@ -6,7 +6,8 @@ using UnityEngine;
 public class ZooManager : MonoBehaviour
 {
     [SerializeField] GameObject ShopM, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
-    [SerializeField] int Money = 100;
+    [SerializeField] int money = 100;
+    [SerializeField] float Money = 100;
     [SerializeField] Transform landSpawn, waterSpawn, skySpawn;
     [SerializeField] int NbAnnimal = 0;
 
@@ -25,8 +26,9 @@ public class ZooManager : MonoBehaviour
             CloseShop();
         }
 
-        Money += (int)(Time.deltaTime + NbAnnimal * 10);
-        MoneyTxt.text = Money.ToString();
+        Money += Time.deltaTime + NbAnnimal * 10;
+        money = (int)Money;
+        MoneyTxt.text = money.ToString();
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
     }
 
