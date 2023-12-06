@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -15,6 +16,16 @@ public class ZooManager : MonoBehaviour
 
     public TextMeshProUGUI MoneyTxt, NbAnnimalTxt;
     public bool WindowOpen = false;
+
+
+
+    public TextMeshProUGUI DieingTxt;
+
+
+    private void Start()
+    {
+        DieingTxt.text = " ";
+    }
 
     private void Awake()
     {
@@ -115,4 +126,18 @@ public class ZooManager : MonoBehaviour
         NbAnnimal--;
     }
 
+    public void DieAge(string Name)
+    {
+        DieingTxt.text = Name + " died of old age.";
+    }
+
+    public void DieHunger(string Name)
+    {
+        DieingTxt.text = Name + " died starving...";
+    }
+
+    public void DieThirst(string Name)
+    {
+        DieingTxt.text = Name + " died of dehydration...";
+    }
 }

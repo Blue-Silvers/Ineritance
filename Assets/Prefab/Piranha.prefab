@@ -199,6 +199,7 @@ MonoBehaviour:
   ThirstIcone: {fileID: 5472067861045157649}
   TirednessIcone: {fileID: 3028961300863240896}
   Sleep: 0
+  DieingTxt: {fileID: 2986039270125084434, guid: 578dc8188afb49544bb4d013507c997b, type: 3}
   Chill: 0
   DontMoove: 0
   speed: 5

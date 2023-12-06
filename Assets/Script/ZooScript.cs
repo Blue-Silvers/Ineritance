@@ -1,11 +1,8 @@
+using TMPro;
 using UnityEngine;
 
 public class ZooScript : MonoBehaviour
 {
-    //[SerializeField] GameObject mammals;
-    //[SerializeField] protected int NbAnnimals = 0;
-
-
     [SerializeField] protected string Name;
     [SerializeField] protected int Age, Longetivity;
 
@@ -16,6 +13,7 @@ public class ZooScript : MonoBehaviour
     [SerializeField] GameObject HungerIcone, ThirstIcone, TirednessIcone;
 
     [SerializeField] protected bool Sleep;
+
 
     protected void Start()
     {
@@ -37,6 +35,7 @@ public class ZooScript : MonoBehaviour
         if (Age >= Longetivity)   
         {
             AnnimalDie();
+            ZooManager.Instance.DieAge(Name);
             Destroy(gameObject);
         }
 
@@ -44,8 +43,8 @@ public class ZooScript : MonoBehaviour
         ActualHunger -= Time.deltaTime;
         if (ActualHunger < 0)
         {
-
             AnnimalDie();
+            ZooManager.Instance.DieHunger(Name);
             Destroy(gameObject);
         }
         else if (ActualHunger < 50) 
@@ -59,8 +58,8 @@ public class ZooScript : MonoBehaviour
         if (ActualThirst < 0)
         {
             AnnimalDie();
+            ZooManager.Instance.DieThirst(Name);
             Destroy(gameObject);
-            
         }
         else if (ActualThirst < 50)
         {
