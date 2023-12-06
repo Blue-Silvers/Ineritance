@@ -8,7 +8,7 @@ public class ZooManager : MonoBehaviour
 {
     public static ZooManager Instance;
 
-    [SerializeField] GameObject ShopM, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
+    [SerializeField] GameObject ShopM, NameUi, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
     [SerializeField] int money = 100;
     [SerializeField] float Money = 100;
     [SerializeField] Transform landSpawn, waterSpawn, skySpawn;
@@ -72,6 +72,7 @@ public class ZooManager : MonoBehaviour
             Instantiate(Chimpanzee, landSpawn.position, landSpawn.rotation);
             NbAnnimal++;
             Money = Money - 100;
+            RenamePage();
         }
     }
 
@@ -82,6 +83,7 @@ public class ZooManager : MonoBehaviour
             Instantiate(Panda, landSpawn.position, landSpawn.rotation);
             NbAnnimal++;
             Money = Money - 750;
+            RenamePage();
         }
     }
     public void BuyCarp()
@@ -91,6 +93,7 @@ public class ZooManager : MonoBehaviour
             Instantiate(Carp, waterSpawn.position, waterSpawn.rotation);
             NbAnnimal++;
             Money = Money - 200;
+            RenamePage();
         }
     }
     public void BuyPiranha()
@@ -100,6 +103,7 @@ public class ZooManager : MonoBehaviour
             Instantiate(Piranha, waterSpawn.position, waterSpawn.rotation);
             NbAnnimal++;
             Money = Money - 350;
+            RenamePage();
         }
     }
     public void BuyKingfisher()
@@ -109,6 +113,7 @@ public class ZooManager : MonoBehaviour
             Instantiate(Kingfisher, skySpawn.position, skySpawn.rotation);
             NbAnnimal++;
             Money = Money - 500;
+            RenamePage();
         }
     }
     public void BuyVulture()
@@ -118,7 +123,15 @@ public class ZooManager : MonoBehaviour
             Instantiate(Vulture, skySpawn.position, skySpawn.rotation);
             NbAnnimal++;
             Money = Money - 1000;
+            RenamePage();
         }
+    }
+
+    public void RenamePage()
+    {
+        NameUi.SetActive(true);
+        //WindowsOpen = false;
+        ShopM.SetActive(false);
     }
 
     public void Die()

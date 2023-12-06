@@ -26,6 +26,7 @@ public class ZooScript : MonoBehaviour
 
     protected void Update()
     {
+        //age
         AgeTime -= Time.deltaTime;
         if (AgeTime < 0)
         {
