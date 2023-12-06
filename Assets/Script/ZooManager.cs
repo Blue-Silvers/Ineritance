@@ -8,7 +8,7 @@ public class ZooManager : MonoBehaviour
 {
     public static ZooManager Instance;
 
-    [SerializeField] GameObject ShopM, NameUi, Chimpanzee, Panda, Carp, Piranha, Kingfisher, Vulture;
+    [SerializeField] GameObject ShopM, NameUi;
     public int money = 100;
     [SerializeField] float Money = 100;
     [SerializeField] Transform landSpawn, waterSpawn, skySpawn;

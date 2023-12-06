@@ -15,7 +15,11 @@ public class SwimAnnimal : Animal
     {
         base.Start();
         AreaSize = Camera.main.ViewportToWorldPoint(Vector2.one) - Camera.main.ViewportToWorldPoint(Vector2.zero);
-        transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 359));
+        if (FirstTime == true)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 359));
+            FirstTime = false;
+        }
     }
 
     void Update()

@@ -15,4 +15,5 @@ public struct SaveAnnimal
     public int Age;
     public float ActualHunger, ActualThirst, ActualTiredness, AgeTime;
     public float x, y, z;
+    public bool FirstTime;
 }
