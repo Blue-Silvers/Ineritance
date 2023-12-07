@@ -455,8 +455,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1399148153822281620}
-        m_TargetAssemblyTypeName: ZooManager, Assembly-CSharp
+      - m_Target: {fileID: 1399148153822281626}
+        m_TargetAssemblyTypeName: FeedShop, Assembly-CSharp
         m_MethodName: CloseFeedShoop
         m_Mode: 1
         m_Arguments:
@@ -1168,7 +1168,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 964519410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399148153822281626}
+        m_TargetAssemblyTypeName: FeedShop, Assembly-CSharp
+        m_MethodName: VegetalButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &964519410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1884,7 +1896,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1258681566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399148153822281626}
+        m_TargetAssemblyTypeName: FeedShop, Assembly-CSharp
+        m_MethodName: WaterButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1258681566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,7 +2030,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1405380030}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399148153822281626}
+        m_TargetAssemblyTypeName: FeedShop, Assembly-CSharp
+        m_MethodName: FishButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1405380030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,6 +2470,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1864774432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 829586597891666016, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+  m_PrefabInstance: {fileID: 1399148153822281619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880557478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,7 +2791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2109143831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399148153822281626}
+        m_TargetAssemblyTypeName: FeedShop, Assembly-CSharp
+        m_MethodName: MeatButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2109143831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,24 +3138,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7537808345800600073, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1740266357}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 829586597891666016, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1399148153822281626}
   m_SourcePrefab: {fileID: 100100000, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
---- !u!114 &1399148153822281620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2090870847578967993, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
-  m_PrefabInstance: {fileID: 1399148153822281619}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66d576c921a5a64cac1c967b2f810d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1399148153822281621 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7537808345800600073, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
   m_PrefabInstance: {fileID: 1399148153822281619}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1399148153822281626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864774432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094c4c8ad2da9414480963ed37c44978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodShopUI: {fileID: 1912765180}
+  NeedFood: {fileID: 1188441154}
+  NeedWater: {fileID: 208803971}
+  NameOnShop: {fileID: 1423530204}
+  Meat: 0
+  Water: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -203,6 +203,9 @@ MonoBehaviour:
   Sleep: 0
   Spawnpoint: 3
   FirstTime: 1
+  ActualHungerP: 0
+  ActualThirstP: 0
+  thisAnimal: {fileID: 3418799578317790552}
   Chill: 0
   DontMoove: 0
   speed: 5

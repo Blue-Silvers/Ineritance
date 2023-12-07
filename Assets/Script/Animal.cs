@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    [SerializeField] protected string Name;
+    public string Name;
     [SerializeField] protected int Age, Longetivity;
     public int price;
     [SerializeField] private TypeOfFoodEat typeOfFood;
@@ -17,6 +17,10 @@ public class Animal : MonoBehaviour
     public int Spawnpoint;
 
     public bool FirstTime = true;
+
+    public float ActualHungerP, ActualThirstP;
+
+    public GameObject thisAnimal;
 
     protected void Start()
     {
@@ -58,7 +62,7 @@ public class Animal : MonoBehaviour
         { 
             HungerIcone.SetActive(true);
         }
-
+        ActualHungerP = ActualHunger;
 
         //need water
         ActualThirst -= Time.deltaTime;
@@ -72,6 +76,7 @@ public class Animal : MonoBehaviour
         {
             ThirstIcone.SetActive(true);
         }
+        ActualThirstP = ActualThirst;
 
         //need sleep
         if (!Sleep) 
@@ -109,7 +114,27 @@ public class Animal : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ZooManager.Instance.FeedShop(Name, ActualHunger, ActualThirst);
+        ZooManager.Instance.FeedManager(thisAnimal);
+    }
+
+    public void ModifyHunger(float actualHungerM, float actualHungerF, float actualHungerV)
+    {
+        ActualHunger += actualHungerM;
+
+
+        if (ActualHunger >= Hunger)
+        {
+            ActualHunger = Hunger;
+        }
+    }
+
+    public void ModifyThirst(float actualThirst)
+    {
+        ActualThirst += actualThirst;
+        if (ActualThirst >= Thirst)
+        {
+            ActualThirst = Thirst;
+        }
     }
 }
 
