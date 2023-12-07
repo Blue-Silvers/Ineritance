@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -124,7 +125,22 @@ public class Animal : MonoBehaviour
 
     public void ModifyHunger(float actualHungerM, float actualHungerF, float actualHungerV)
     {
-        ActualHunger += actualHungerM;
+        switch (typeOfFood)
+        {
+            case TypeOfFoodEat.Meat:
+                ActualHunger += actualHungerM;
+                break;
+            case TypeOfFoodEat.Fish:
+                ActualHunger += actualHungerF;
+                break;
+            case TypeOfFoodEat.Vegetable:
+                ActualHunger += actualHungerV;
+                break;
+            case TypeOfFoodEat.omnivore:
+                ActualHunger += actualHungerM;
+                ActualHunger += actualHungerV;
+                break;
+        }
 
         if (ActualHunger >= Hunger)
         {

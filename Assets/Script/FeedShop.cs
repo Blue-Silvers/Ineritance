@@ -60,7 +60,7 @@ public class FeedShop : MonoBehaviour
     {
         if (yourMoney >= 75)
         {
-            Food = 50;
+            Food = 75;
             current.ModifyHunger(Food, 0, 0);
             ZooManager.Instance.NewMoney(75f);
             Invoke("Newstate", 0.1f);
@@ -70,7 +70,7 @@ public class FeedShop : MonoBehaviour
     {
         if (yourMoney >= 50)
         {
-            Food = 50;
+            Food = 40;
             current.ModifyHunger(0, 0, Food);
             ZooManager.Instance.NewMoney(50f);
             Invoke("Newstate", 0.1f);
@@ -80,7 +80,7 @@ public class FeedShop : MonoBehaviour
     {
         if (yourMoney >= 25)
         {
-            Food = 50;
+            Food = 30;
             current.ModifyHunger(0, Food, 0);
             ZooManager.Instance.NewMoney(25f);
             Invoke("Newstate", 0.1f);
