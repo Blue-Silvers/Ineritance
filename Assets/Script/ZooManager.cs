@@ -37,10 +37,11 @@ public class ZooManager : MonoBehaviour
             CloseShop();
         }
 
-        Money += Time.deltaTime + ( NbAnnimal / 50f);
+        Money += Time.deltaTime + ( NbAnnimal / 100f);
         money = (int)Money;
         MoneyTxt.text = money.ToString();
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
+        FeedShop.instance.YourMoney(money);
     }
 
     public void OpenShop()
@@ -123,5 +124,10 @@ public class ZooManager : MonoBehaviour
     public void FeedShopOpen(Animal animalF)
     {
         FeedShop.instance.feedShop(animalF);
+    }
+
+    public void NewMoney(float cost)
+    {
+        Money -= cost;
     }
 }

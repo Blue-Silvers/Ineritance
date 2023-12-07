@@ -62,6 +62,7 @@ public class Animal : MonoBehaviour
         { 
             HungerIcone.SetActive(true);
         }
+        else { HungerIcone.SetActive(false);}
         ActualHungerP = ActualHunger;
 
         //need water
@@ -76,6 +77,7 @@ public class Animal : MonoBehaviour
         {
             ThirstIcone.SetActive(true);
         }
+        else {  ThirstIcone.SetActive(false);}
         ActualThirstP = ActualThirst;
 
         //need sleep

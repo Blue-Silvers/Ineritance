@@ -10,6 +10,8 @@ public class FeedShop : MonoBehaviour
     [SerializeField] GameObject FoodShopUI, NeedFood, NeedWater;
     public TextMeshProUGUI NameOnShop;
 
+    int yourMoney;
+
     public static FeedShop instance;
 
     public float Food, Water;
@@ -26,12 +28,17 @@ public class FeedShop : MonoBehaviour
         }
     }
 
-        public void feedShop(Animal animal)
+    public void YourMoney(int ActualMoney)
+    {
+        yourMoney = ActualMoney;
+    }
+
+    public void feedShop(Animal animal)
     {
         FoodShopUI.SetActive(true);
         current = animal;
         NameOnShop.text = animal.Name + " need :";
-        if (animal.ActualHungerP <= 50)
+        if (current.ActualHungerP <= 50)
         {
             NeedFood.SetActive(true);
         }
@@ -39,7 +46,7 @@ public class FeedShop : MonoBehaviour
         {
             NeedFood.SetActive(false);
         }
-        if (animal.ActualThirstP <= 50)
+        if (current.ActualThirstP <= 50)
         {
             NeedWater.SetActive(true);
         }
@@ -51,27 +58,68 @@ public class FeedShop : MonoBehaviour
 
     public void MeatButton()
     {
-        Food = 50;
-        current.ModifyHunger(Food, 0, 0);
+        if (yourMoney >= 75)
+        {
+            Food = 50;
+            current.ModifyHunger(Food, 0, 0);
+            ZooManager.Instance.NewMoney(75f);
+            Newstate(current);
+        }
     }
     public void VegetalButton()
     {
-        Food = 50;
-        current.ModifyHunger(0, 0, Food);
+        if (yourMoney >= 50)
+        {
+            Food = 50;
+            current.ModifyHunger(0, 0, Food);
+            ZooManager.Instance.NewMoney(50f);
+            Newstate(current);
+        }
     }
     public void FishButton()
     {
-        Food = 50;
-        current.ModifyHunger(0, Food, 0);
+        if (yourMoney >= 25)
+        {
+            Food = 50;
+            current.ModifyHunger(0, Food, 0);
+            ZooManager.Instance.NewMoney(25f);
+            Newstate(current);
+        }
     }
     public void WaterButton()
     {
-        Water = 50;
-        current.ModifyThirst(Water);
+        if (yourMoney >= 10)
+        {
+            Water = 50;
+            current.ModifyThirst(Water);
+            ZooManager.Instance.NewMoney(10f);
+            Newstate(current);
+        }
     }
 
     public void CloseFeedShoop()
     {
         FoodShopUI.SetActive(false);
+    }
+
+    private void Newstate(Animal animal)
+    {
+        current = animal;
+        if (current.ActualHungerP <= 50)
+        {
+            NeedFood.SetActive(true);
+        }
+        else
+        {
+            NeedFood.SetActive(false);
+        }
+        if (current.ActualThirstP <= 50)
+        {
+            NeedWater.SetActive(true);
+        }
+        else
+        {
+            NeedWater.SetActive(false);
+        }
     }
 }
