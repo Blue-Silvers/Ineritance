@@ -14,6 +14,7 @@ public class PlayerInfo
 public struct SaveAnnimal
 {
     public string Name;
+    public string namePrefab;
     public int Age;
     public float ActualHunger, ActualThirst, ActualTiredness, AgeTime;
     public float x, y, z;

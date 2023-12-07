@@ -32,6 +32,7 @@ public class SaveSystem : MonoBehaviour
                 Vector3 AnimalPos = new Vector3(i.x, i.y, i.z);
 
                 AnimalRespawn.Name = i.Name;
+
                 AnimalRespawn.SetAge(i.Age);
                 AnimalRespawn.SetHunger(i.ActualHunger) ;
                 AnimalRespawn.SetThirst(i.ActualThirst) ;
@@ -39,7 +40,8 @@ public class SaveSystem : MonoBehaviour
                 AnimalRespawn.SetAgeTime(i.AgeTime) ;
                 AnimalRespawn.FirstTime = i.FirstTime;
 
-                //Instantiate avec pour pos AnimalPas
+                GameObject AnimalSpawn = Instantiate(Resources.Load<GameObject>("Prefab/" + i.namePrefab.Replace("(Clone)", "")));
+                AnimalSpawn.transform.position = AnimalPos;
             }
         }
 
@@ -58,6 +60,7 @@ public class SaveSystem : MonoBehaviour
             Vector3 AnimalPosition = AnimalInZoo.transform.position;
             player.inventory.Add(new SaveAnnimal()
             {
+                namePrefab = AnimalInZoo.name,
                 Name = AnimalInZoo.GetComponent<Animal>().Name,
                 FirstTime = AnimalInZoo.GetComponent<Animal>().FirstTime,
                 Age = AnimalInZoo.GetComponent<Animal>().GetAge(),
