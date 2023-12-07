@@ -27,21 +27,21 @@ public class SaveSystem : MonoBehaviour
             ZooManager.Instance.NbAnnimal = player.NbAnnimal;
             foreach (SaveAnnimal i in player.inventory)
             {
-                Animal AnimalRespawn = new Animal();
+                //GameObject AnimalRespawn = new GameObject();
 
                 Vector3 AnimalPos = new Vector3(i.x, i.y, i.z);
 
-                AnimalRespawn.Name = i.Name;
+                GameObject AnimalRespawn = Instantiate(Resources.Load<GameObject>("Prefab" + i.namePrefab.Replace("(Clone)", "").Trim()));
 
-                AnimalRespawn.SetAge(i.Age);
-                AnimalRespawn.SetHunger(i.ActualHunger) ;
-                AnimalRespawn.SetThirst(i.ActualThirst) ;
-                AnimalRespawn.SetTiredness(i.ActualTiredness) ;
-                AnimalRespawn.SetAgeTime(i.AgeTime) ;
-                AnimalRespawn.FirstTime = i.FirstTime;
+                AnimalRespawn.AddComponent<Animal>().Name = i.Name;
+                AnimalRespawn.AddComponent<Animal>().SetAge(i.Age);
+                AnimalRespawn.AddComponent<Animal>().SetHunger(i.ActualHunger) ;
+                AnimalRespawn.AddComponent<Animal>().SetThirst(i.ActualThirst) ;
+                AnimalRespawn.AddComponent<Animal>().SetTiredness(i.ActualTiredness) ;
+                AnimalRespawn.AddComponent<Animal>().SetAgeTime(i.AgeTime) ;
+                AnimalRespawn.AddComponent<Animal>().FirstTime = i.FirstTime;
 
-                GameObject AnimalSpawn = Instantiate(Resources.Load<GameObject>("Prefab/" + i.namePrefab.Replace("(Clone)", "")));
-                AnimalSpawn.transform.position = AnimalPos;
+                AnimalRespawn.transform.position = AnimalPos;
             }
         }
 
