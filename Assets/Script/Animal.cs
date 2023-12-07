@@ -116,13 +116,15 @@ public class Animal : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ZooManager.Instance.FeedManager(thisAnimal);
+        if (Sleep == false)
+        {
+            ZooManager.Instance.FeedManager(thisAnimal);
+        }
     }
 
     public void ModifyHunger(float actualHungerM, float actualHungerF, float actualHungerV)
     {
         ActualHunger += actualHungerM;
-
 
         if (ActualHunger >= Hunger)
         {
@@ -133,10 +135,54 @@ public class Animal : MonoBehaviour
     public void ModifyThirst(float actualThirst)
     {
         ActualThirst += actualThirst;
+
         if (ActualThirst >= Thirst)
         {
             ActualThirst = Thirst;
         }
+    }
+
+
+    //  SET/GET
+    public void SetAge(int newAge)
+    {
+        Age = newAge;
+    }
+    public int GetAge()
+    {
+        return Age;
+    }
+    public void SetHunger(float newHunger)
+    {
+        ActualHunger = newHunger;
+    }
+    public float GetHunger()
+    {
+        return ActualHunger;
+    }
+    public void SetThirst(float newThirst)
+    {
+        ActualThirst = newThirst;
+    }
+    public float GetThirst()
+    {
+        return ActualThirst;
+    }
+    public void SetTiredness(float newTiredness)
+    {
+        ActualTiredness = newTiredness;
+    }
+    public float GetTiredness()
+    {
+        return Tiredness;
+    }
+    public void SetAgeTime(float newAgeTime)
+    {
+        AgeTime = newAgeTime;
+    }
+    public float GetAgeTime()
+    {
+        return AgeTime;
     }
 }
 

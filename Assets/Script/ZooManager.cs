@@ -37,7 +37,7 @@ public class ZooManager : MonoBehaviour
             CloseShop();
         }
 
-        Money += Time.deltaTime + ( NbAnnimal / 100f);
+        Money += Time.deltaTime + ( NbAnnimal / 200f);
         money = (int)Money;
         MoneyTxt.text = money.ToString();
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();

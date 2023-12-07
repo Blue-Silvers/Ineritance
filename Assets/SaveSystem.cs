@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.IO;
 using static UnityEditor.Progress;
+using System.Net.Cache;
+using Unity.VisualScripting;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -23,6 +25,22 @@ public class SaveSystem : MonoBehaviour
             player = JsonUtility.FromJson<PlayerInfo>(json);
             ZooManager.Instance.money = player.money;
             ZooManager.Instance.NbAnnimal = player.NbAnnimal;
+            foreach (SaveAnnimal i in player.inventory)
+            {
+                Animal AnimalRespawn = new Animal();
+
+                Vector3 AnimalPos = new Vector3(i.x, i.y, i.z);
+
+                AnimalRespawn.Name = i.Name;
+                AnimalRespawn.SetAge(i.Age);
+                AnimalRespawn.SetHunger(i.ActualHunger) ;
+                AnimalRespawn.SetThirst(i.ActualThirst) ;
+                AnimalRespawn.SetTiredness(i.ActualTiredness) ;
+                AnimalRespawn.SetAgeTime(i.AgeTime) ;
+                AnimalRespawn.FirstTime = i.FirstTime;
+
+                //Instantiate avec pour pos AnimalPas
+            }
         }
 
     }
@@ -32,7 +50,26 @@ public class SaveSystem : MonoBehaviour
         player.money = ZooManager.Instance.money;
         player.NbAnnimal = ZooManager.Instance.NbAnnimal;
 
-
+        GameObject[] AllAnimal;
+        AllAnimal = GameObject.FindGameObjectsWithTag("Annimal");
+        player.inventory.Clear();
+        foreach (GameObject AnimalInZoo in AllAnimal)
+        {
+            Vector3 AnimalPosition = AnimalInZoo.transform.position;
+            player.inventory.Add(new SaveAnnimal()
+            {
+                Name = AnimalInZoo.GetComponent<Animal>().Name,
+                FirstTime = AnimalInZoo.GetComponent<Animal>().FirstTime,
+                Age = AnimalInZoo.GetComponent<Animal>().GetAge(),
+                ActualHunger = AnimalInZoo.GetComponent<Animal>().GetHunger(),
+                ActualThirst = AnimalInZoo.GetComponent<Animal>().GetThirst(),
+                ActualTiredness = AnimalInZoo.GetComponent<Animal>().GetTiredness(),
+                AgeTime = AnimalInZoo.GetComponent<Animal>().GetAgeTime(),
+                x = AnimalPosition.x,
+                y = AnimalPosition.y,
+                z = AnimalPosition.z,
+            });
+        }
         Debug.Log(Application.persistentDataPath + "/data.save");
         string json = JsonUtility.ToJson(player);
         if (!File.Exists(Application.persistentDataPath + "/data.save"))

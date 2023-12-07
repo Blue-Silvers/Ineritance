@@ -63,7 +63,7 @@ public class FeedShop : MonoBehaviour
             Food = 50;
             current.ModifyHunger(Food, 0, 0);
             ZooManager.Instance.NewMoney(75f);
-            Newstate(current);
+            Invoke("Newstate", 0.1f);
         }
     }
     public void VegetalButton()
@@ -73,7 +73,7 @@ public class FeedShop : MonoBehaviour
             Food = 50;
             current.ModifyHunger(0, 0, Food);
             ZooManager.Instance.NewMoney(50f);
-            Newstate(current);
+            Invoke("Newstate", 0.1f);
         }
     }
     public void FishButton()
@@ -83,7 +83,7 @@ public class FeedShop : MonoBehaviour
             Food = 50;
             current.ModifyHunger(0, Food, 0);
             ZooManager.Instance.NewMoney(25f);
-            Newstate(current);
+            Invoke("Newstate", 0.1f);
         }
     }
     public void WaterButton()
@@ -93,7 +93,7 @@ public class FeedShop : MonoBehaviour
             Water = 50;
             current.ModifyThirst(Water);
             ZooManager.Instance.NewMoney(10f);
-            Newstate(current);
+            Invoke("Newstate", 0.1f);
         }
     }
 
@@ -102,9 +102,8 @@ public class FeedShop : MonoBehaviour
         FoodShopUI.SetActive(false);
     }
 
-    private void Newstate(Animal animal)
+    private void Newstate()
     {
-        current = animal;
         if (current.ActualHungerP <= 50)
         {
             NeedFood.SetActive(true);
