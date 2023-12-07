@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 7164603932407474263}
   - component: {fileID: 4722402249301142894}
   - component: {fileID: 2011096380228181021}
+  - component: {fileID: 9015096321356027269}
   m_Layer: 0
   m_Name: Vautour
-  m_TagString: Untagged
+  m_TagString: Annimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,8 +202,44 @@ MonoBehaviour:
   TirednessIcone: {fileID: 2939812840631611089}
   Sleep: 0
   Spawnpoint: 2
+  FirstTime: 1
   DontMoove: 0
   speed: 4
+--- !u!58 &9015096321356027269
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399035138191415397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18478155, y: -0.21623361}
+  serializedVersion: 2
+  m_Radius: 1.1724867
 --- !u!1 &6387792962267930568
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 6311650315195476355}
   - component: {fileID: 4941817244305636192}
   - component: {fileID: 6884163578761929102}
+  - component: {fileID: 4033243182148904805}
   m_Layer: 0
   m_Name: Piranha
-  m_TagString: Untagged
+  m_TagString: Annimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,9 +202,45 @@ MonoBehaviour:
   TirednessIcone: {fileID: 3028961300863240896}
   Sleep: 0
   Spawnpoint: 3
+  FirstTime: 1
   Chill: 0
   DontMoove: 0
   speed: 5
+--- !u!70 &4033243182148904805
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418799578317790552}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.050821308, y: 0.0351835}
+  m_Size: {x: 1.7732706, y: 0.90332806}
+  m_Direction: 1
 --- !u!1 &5472067861045157649
 GameObject:
   m_ObjectHideFlags: 0

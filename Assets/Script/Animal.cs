@@ -106,6 +106,11 @@ public class Animal : MonoBehaviour
         ZooManager.Instance.Die();
     }
 
+
+    private void OnMouseDown()
+    {
+        ZooManager.Instance.FeedShop(Name, ActualHunger, ActualThirst);
+    }
 }
 
 enum TypeOfFoodEat

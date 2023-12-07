@@ -19,6 +19,9 @@ public class ZooManager : MonoBehaviour
 
 
 
+    public GameObject FoodShopUI, NeedFood, NeedWater;
+    public TextMeshProUGUI NameOnShop;
+
     public TextMeshProUGUI DieingTxt;
 
 
@@ -37,6 +40,7 @@ public class ZooManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             CloseShop();
+            CloseFeedShoop();
         }
 
         Money += Time.deltaTime + ( NbAnnimal / 50f);
@@ -114,5 +118,32 @@ public class ZooManager : MonoBehaviour
     public void DieThirst(string Name)
     {
         DieingTxt.text = Name + " died of dehydration...";
+    }
+
+    public void FeedShop(string Name, float Hunger, float Thirst)
+    {
+        FoodShopUI.SetActive(true);
+        NameOnShop.text = Name + " need :";
+        if (Hunger <= 50)
+        {
+            NeedFood.SetActive(true);
+        }
+        else
+        {
+            NeedFood.SetActive(false);
+        }
+        if (Thirst <= 50)
+        {
+            NeedWater.SetActive(true);
+        }
+        else 
+        {
+            NeedWater.SetActive(false); 
+        }
+    }
+
+    public void CloseFeedShoop()
+    {
+        FoodShopUI.SetActive(false);
     }
 }

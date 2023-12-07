@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 6337934550864309973}
   - component: {fileID: 1525267357863398774}
   - component: {fileID: 6010867071432131245}
+  - component: {fileID: 4746488344431022500}
   m_Layer: 0
   m_Name: Carpe
-  m_TagString: Untagged
+  m_TagString: Annimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,9 +202,45 @@ MonoBehaviour:
   TirednessIcone: {fileID: 7849772293930668264}
   Sleep: 0
   Spawnpoint: 3
+  FirstTime: 1
   Chill: 0
   DontMoove: 0
   speed: 3
+--- !u!70 &4746488344431022500
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6683750151061986713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034537558, y: -0.003165897}
+  m_Size: {x: 1.8594308, y: 0.7424531}
+  m_Direction: 1
 --- !u!1 &7307270006114808769
 GameObject:
   m_ObjectHideFlags: 0
