@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZooManager : MonoBehaviour
@@ -42,6 +43,11 @@ public class ZooManager : MonoBehaviour
         MoneyTxt.text = money.ToString();
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
         FeedShop.instance.YourMoney(money);
+    }
+
+    public void SetMoney(int newMoney)
+    {
+        Money = newMoney;
     }
 
     public void OpenShop()

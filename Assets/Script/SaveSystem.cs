@@ -12,7 +12,6 @@ public class SaveSystem : MonoBehaviour
     {
         instance = this;
         Load();
-
     }
 
     public void Load()
@@ -23,15 +22,13 @@ public class SaveSystem : MonoBehaviour
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
             player = JsonUtility.FromJson<PlayerInfo>(json);
-            ZooManager.Instance.money = player.money;
+            ZooManager.Instance.SetMoney(player.money);
             ZooManager.Instance.NbAnnimal = player.NbAnnimal;
             foreach (SaveAnnimal i in player.inventory)
             {
                 //GameObject AnimalRespawn = new GameObject();
 
-                Vector3 AnimalPos = new Vector3(i.x, i.y, i.z);
-
-                GameObject AnimalRespawn = Instantiate(Resources.Load<GameObject>("Prefab" + i.namePrefab.Replace("(Clone)", "").Trim()));
+                GameObject AnimalRespawn = Instantiate(Resources.Load<GameObject>("Prefab/" + i.namePrefab.Replace("(Clone)", "").Trim()));
 
                 AnimalRespawn.AddComponent<Animal>().Name = i.Name;
                 AnimalRespawn.AddComponent<Animal>().SetAge(i.Age);
@@ -41,7 +38,7 @@ public class SaveSystem : MonoBehaviour
                 AnimalRespawn.AddComponent<Animal>().SetAgeTime(i.AgeTime) ;
                 AnimalRespawn.AddComponent<Animal>().FirstTime = i.FirstTime;
 
-                AnimalRespawn.transform.position = AnimalPos;
+                AnimalRespawn.transform.position = new Vector3(i.x, i.y, i.z); ;
             }
         }
 
@@ -80,6 +77,18 @@ public class SaveSystem : MonoBehaviour
             File.Create(Application.persistentDataPath + "/data.save").Dispose();
         }
         File.WriteAllText(Application.persistentDataPath + "/data.save", json);
+    }
+
+    public void NewGame()
+    {
+        if (File.Exists(Application.persistentDataPath + "/data.save"))
+        {
+            string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
+            player = JsonUtility.FromJson<PlayerInfo>(json);
+            player.inventory.Clear();
+            player.NbAnnimal = 0;
+            player.money = 100;
+        }
     }
 }
 

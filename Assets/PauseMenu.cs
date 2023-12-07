@@ -40,9 +40,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SaveSystem.instance.NewGame();
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(0);
     }
+
     public void QuitGame()
     {
         Application.Quit();
