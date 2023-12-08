@@ -87,6 +87,13 @@ public class SaveSystem : MonoBehaviour
 
     public void NewGame()
     {
+        GameObject[] AllAnimal;
+        AllAnimal = GameObject.FindGameObjectsWithTag("Annimal");
+        foreach (GameObject AnimalInZoo in AllAnimal)
+        {
+            Destroy(AnimalInZoo);
+        }
+
         if (File.Exists(Application.persistentDataPath + "/data.save"))
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
