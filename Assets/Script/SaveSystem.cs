@@ -87,20 +87,9 @@ public class SaveSystem : MonoBehaviour
 
     public void NewGame()
     {
-        GameObject[] AllAnimal;
-        AllAnimal = GameObject.FindGameObjectsWithTag("Annimal");
-        foreach (GameObject AnimalInZoo in AllAnimal)
-        {
-            Destroy(AnimalInZoo);
-        }
-
         if (File.Exists(Application.persistentDataPath + "/data.save"))
         {
-            string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
-            player = JsonUtility.FromJson<PlayerInfo>(json);
-            player.inventory.Clear();
-            player.NbAnnimal = 0;
-            player.money = 100;
+            File.Delete(Application.persistentDataPath + "/data.save");
         }
     }
 }
