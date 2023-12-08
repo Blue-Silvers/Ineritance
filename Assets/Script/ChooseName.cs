@@ -16,6 +16,14 @@ public class ChooseName : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Return))
+        {
+            Validate();
+        }
+    }
+
     public void SetupAnimal(Animal animal)
     {
         current = animal;
