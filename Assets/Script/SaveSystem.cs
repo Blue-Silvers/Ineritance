@@ -20,6 +20,12 @@ public class SaveSystem : MonoBehaviour
 
         if (File.Exists(Application.persistentDataPath + "/data.save"))
         {
+            GameObject[] AllAnimal;
+            AllAnimal = GameObject.FindGameObjectsWithTag("Annimal");
+            foreach (GameObject AnimalInZoo in AllAnimal)
+            {
+                Destroy(AnimalInZoo);
+            }
             string json = File.ReadAllText(Application.persistentDataPath + "/data.save");
             player = JsonUtility.FromJson<PlayerInfo>(json);
             ZooManager.Instance.SetMoney(player.money);
@@ -30,13 +36,13 @@ public class SaveSystem : MonoBehaviour
 
                 GameObject AnimalRespawn = Instantiate(Resources.Load<GameObject>("Prefab/" + i.namePrefab.Replace("(Clone)", "").Trim()));
 
-                AnimalRespawn.AddComponent<Animal>().Name = i.Name;
-                AnimalRespawn.AddComponent<Animal>().SetAge(i.Age);
-                AnimalRespawn.AddComponent<Animal>().SetHunger(i.ActualHunger) ;
-                AnimalRespawn.AddComponent<Animal>().SetThirst(i.ActualThirst) ;
-                AnimalRespawn.AddComponent<Animal>().SetTiredness(i.ActualTiredness) ;
-                AnimalRespawn.AddComponent<Animal>().SetAgeTime(i.AgeTime) ;
-                AnimalRespawn.AddComponent<Animal>().FirstTime = i.FirstTime;
+                AnimalRespawn.GetComponent<Animal>().Name = i.Name;
+                AnimalRespawn.GetComponent<Animal>().SetAge(i.Age);
+                AnimalRespawn.GetComponent<Animal>().SetHunger(i.ActualHunger) ;
+                AnimalRespawn.GetComponent<Animal>().SetThirst(i.ActualThirst) ;
+                AnimalRespawn.GetComponent<Animal>().SetTiredness(i.ActualTiredness) ;
+                AnimalRespawn.GetComponent<Animal>().SetAgeTime(i.AgeTime) ;
+                AnimalRespawn.GetComponent<Animal>().FirstTime = i.FirstTime;
 
                 AnimalRespawn.transform.position = new Vector3(i.x, i.y, i.z); ;
             }
