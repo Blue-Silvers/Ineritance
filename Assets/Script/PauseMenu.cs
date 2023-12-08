@@ -10,6 +10,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenuUI;
 
 
+    private void Start()
+    {
+        gameIsPaused = false;
+    }
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -30,12 +35,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+        ZooManager.Instance.GameIsPause();
     }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
         gameIsPaused = false;
+        ZooManager.Instance.GameIsPause();
     }
 
     public void Restart()

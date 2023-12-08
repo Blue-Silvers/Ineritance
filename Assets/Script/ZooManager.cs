@@ -20,10 +20,13 @@ public class ZooManager : MonoBehaviour
 
     public TextMeshProUGUI DieingTxt;
 
+    public bool Pause = true;
+
 
     private void Start()
     {
         DieingTxt.text = " ";
+        Pause = true;
     }
 
     private void Awake()
@@ -37,10 +40,12 @@ public class ZooManager : MonoBehaviour
         {
             CloseShop();
         }
-
-        Money += Time.deltaTime + ( NbAnnimal / 200f);
-        money = (int)Money;
-        MoneyTxt.text = money.ToString();
+        if (Pause == true)
+        {
+            Money += Time.deltaTime + (NbAnnimal / 200f);
+            money = (int)Money;
+            MoneyTxt.text = money.ToString();
+        }
         NbAnnimalTxt.text = "Nomber of annimals : " + NbAnnimal.ToString();
         FeedShop.instance.YourMoney(money);
     }
@@ -48,6 +53,11 @@ public class ZooManager : MonoBehaviour
     public void SetMoney(int newMoney)
     {
         Money = newMoney;
+    }
+
+    public void GameIsPause()
+    {
+        Pause = !Pause;
     }
 
     public void OpenShop()
