@@ -806,6 +806,10 @@ PrefabInstance:
       propertyPath: waterSpawn
       value: 
       objectReference: {fileID: 317734002}
+    - target: {fileID: 2183048614549484884, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2615573471534669883, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -898,6 +902,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1222528575}
+    - target: {fileID: 8284055443906077201, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8457482819761811698, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -906,6 +914,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1574896405}
+    - target: {fileID: 8696753260409965787, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+      propertyPath: m_text
+      value: New game
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130674237776805086, guid: 44bffa274f410204e9916d223fdc4498, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
