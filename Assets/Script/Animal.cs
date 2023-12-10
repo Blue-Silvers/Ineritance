@@ -25,14 +25,14 @@ public class Animal : MonoBehaviour
 
     protected void Start()
     {
-        //if (FirstTime == true)
-        //{
+        if (FirstTime == true)
+        {
             Tiredness = Random.Range(20, 200);
             ActualHunger = Hunger;
             ActualThirst = Thirst;
             ActualTiredness = Tiredness;
             Sleep = false;
-        //}
+        }
     }
 
     protected void Update()
